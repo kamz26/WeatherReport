@@ -2,8 +2,8 @@
 
 Problem Statement:You need to build a small app to fetch the weather forecast of multiple cities.
 PRE-REQUISITES
-1.Head over to http://openweathermap.org 2.
-Register an account on the website
+1.Head over to http://openweathermap.org
+2.Register an account on the website
 3.After registration, go to your personal page 
 4.Copy the API key that is generated for you
 
