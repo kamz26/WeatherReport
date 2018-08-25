@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CityData" representedClassName="CityData" syncable="YES">
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoordinateData" inverseName="coord" inverseEntity="CoordinateData" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReportData" inverseName="city" inverseEntity="ReportData" syncable="YES"/>
+    </entity>
+    <entity name="CoordinateData" representedClassName="CoordinateData" syncable="YES">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="coord" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityData" inverseName="coord" inverseEntity="CityData" syncable="YES"/>
+    </entity>
+    <entity name="ListData" representedClassName="ListData" syncable="YES">
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dt_txt" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ReportData" inverseName="list" inverseEntity="ReportData" syncable="YES"/>
+        <relationship name="main" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MainData" inverseName="main" inverseEntity="MainData" syncable="YES"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WeatherData" inverseName="weather" inverseEntity="WeatherData" syncable="YES"/>
+    </entity>
+    <entity name="MainData" representedClassName="MainData" syncable="YES">
+        <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temp_max" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="temp_min" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="main" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListData" inverseName="main" inverseEntity="ListData" syncable="YES"/>
+    </entity>
+    <entity name="ReportData" representedClassName="ReportData" syncable="YES">
+        <attribute name="cnt" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="cod" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CityData" inverseName="relationship" inverseEntity="CityData" syncable="YES"/>
+        <relationship name="list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ListData" inverseName="list" inverseEntity="ListData" syncable="YES"/>
+    </entity>
+    <entity name="WeatherData" representedClassName="WeatherData" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="weather" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListData" inverseName="weather" inverseEntity="ListData" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CityData" positionX="-54" positionY="18" width="128" height="120"/>
+        <element name="CoordinateData" positionX="-45" positionY="54" width="128" height="90"/>
+        <element name="ListData" positionX="-27" positionY="72" width="128" height="120"/>
+        <element name="MainData" positionX="-18" positionY="81" width="128" height="120"/>
+        <element name="ReportData" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="WeatherData" positionX="0" positionY="108" width="128" height="90"/>
+    </elements>
+</model>
