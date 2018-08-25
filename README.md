@@ -1,13 +1,25 @@
 # WeatherApp
 
-Design a simple weather forecast application.
+Problem Statement:You need to build a small app to fetch the weather forecast of multiple cities.
+PRE-REQUISITES
+1.Head over to http://openweathermap.org 2.
+Register an account on the website
+3.After registration, go to your personal page 
+4.Copy the API key that is generated for you
 
-The first screen should detect the current location of the user or enable him to modify it if needed.
-Second view should be showing the weather details for the location.
- 
 
-Points:
 
-Working App.
-Scalable. It can accommodate lot more locations.
-Code Structure/Design
+Technologies to use
+1.Objective C/Swift 
+2.CoreData
+3.Autolayout
+4.MVVM Design Pattern
+5.May use any 3rd party libraries 
+
+STEP I
+1.1.The app should accept multiple city names from the user
+1.2.Based on the city names entered, the app should show the weatherforecast for next 5 days for each city
+
+STEP II
+1.1.Find the current city using GPS1.
+2.Display the weather forecast for the current city for next 5 days
